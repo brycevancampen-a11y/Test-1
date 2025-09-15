@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Doodle Games</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+    header { background: #4285F4; color: white; width: 100%; text-align: center; padding: 20px; }
+    main { width: 80%; max-width: 800px; margin-top: 20px; }
+    .game { background: white; padding: 15px; margin: 10px 0; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
+    .game a { text-decoration: none; color: #4285F4; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Google Doodle Games</h1>
+</header>
+
+<main id="game-list">
+  <p>Click a game to play Google Doodle games!</p>
+</main>
+
+<script>
+  // List of Google Doodle games
+  const games = [
+    {name: "Pac-Man Doodle", link: "https://www.google.com/doodles/30th-anniversary-of-pac-man"},
+    {name: "Coding Doodle", link: "https://www.google.com/doodles/celebrating-grace-hopper"},
+    {name: "Soccer Doodle", link: "https://www.google.com/doodles/2022-fifa-world-cup"},
+    {name: "Basketball Doodle", link: "https://www.google.com/doodles/basketball-game"},
+    {name: "Halloween Doodle", link: "https://www.google.com/doodles/halloween-2016"}
+  ];
+
+  const gameListDiv = document.getElementById('game-list');
+  gameListDiv.innerHTML = '';
+
+  games.forEach(game => {
+    const div = document.createElement('div');
+    div.classList.add('game');
+    div.innerHTML = `<span>${game.name}</span><a href="${game.link}" target="_blank">Play</a>`;
+    gameListDiv.appendChild(div);
+  });
+</script>
+
+</body>
+</html>
